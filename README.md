@@ -11,3 +11,8 @@ single-node core → network service → sharding → replication.
 ```bash
 pytest tests/ -v
 ```
+
+## Day 2
+- Added optional TTL (time-to-live) expiry to `set()`.
+- Lazy expiry: expired keys are detected and removed on `get()`, not via a background thread.
+- Tests covering expiry, no-TTL permanence, TTL cleared on overwrite, and expiry cleanup on delete.
